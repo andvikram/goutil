@@ -26,7 +26,7 @@ func qsort(arr []int, lo, hi int) []int {
 
 func partition(arr []int, lo, hi int) int {
 	i, j := lo, hi
-	pivot := arr[(lo+hi)/2] // better way would is the 3 mean method
+	pivot := arr[(lo+hi)/2] // better way is the "median-of-three" method
 
 	for {
 		for arr[i] < pivot {
