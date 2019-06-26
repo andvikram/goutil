@@ -13,7 +13,7 @@ func CountingSort(collection []int) []int {
 
 	sortedCol := make([]int, n)
 
-	// First, find the maximum value in arr
+	// First, find the maximum value in the collection
 	k := getMax(collection)
 
 	// Create a counting array with length as k + 1 more to accomodate 0 of the index
