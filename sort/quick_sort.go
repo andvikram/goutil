@@ -4,36 +4,36 @@
 
 package sort
 
-// QuickSort sorts an array of integers in O(n * logn) average time
-func QuickSort(arr []int) []int {
-	if len(arr) <= 1 {
-		return arr
+// QuickSort sorts an collection of integers in O(n * logn) average time
+func QuickSort(collection []int) []int {
+	if len(collection) <= 1 {
+		return collection
 	}
-	lo, hi := 0, len(arr)-1
+	lo, hi := 0, len(collection)-1
 
-	return qsort(arr, lo, hi)
+	return qsort(collection, lo, hi)
 }
 
-func qsort(arr []int, lo, hi int) []int {
+func qsort(collection []int, lo, hi int) []int {
 	if lo < hi {
-		p := partition(arr, lo, hi)
-		qsort(arr, lo, p)
-		qsort(arr, p+1, hi)
+		p := partition(collection, lo, hi)
+		qsort(collection, lo, p)
+		qsort(collection, p+1, hi)
 	}
 
-	return arr
+	return collection
 }
 
-func partition(arr []int, lo, hi int) int {
+func partition(collection []int, lo, hi int) int {
 	i, j := lo, hi
-	pivot := arr[(lo+hi)/2] // better way is the "median-of-three" method
+	pivot := collection[(lo+hi)/2] // better way is the "median-of-three" method
 
 	for {
-		for arr[i] < pivot {
+		for collection[i] < pivot {
 			i++
 		}
 
-		for arr[j] > pivot {
+		for collection[j] > pivot {
 			j--
 		}
 
@@ -41,20 +41,20 @@ func partition(arr []int, lo, hi int) int {
 			return j
 		}
 
-		swap(arr, i, j)
+		swap(collection, i, j)
 
 		// contingency for duplicates
-		if arr[i] == pivot {
+		if collection[i] == pivot {
 			i++
 		}
-		if arr[j] == pivot {
+		if collection[j] == pivot {
 			j--
 		}
 	}
 }
 
-func swap(arr []int, a, b int) {
-	c := arr[b]
-	arr[b] = arr[a]
-	arr[a] = c
+func swap(collection []int, a, b int) {
+	c := collection[b]
+	collection[b] = collection[a]
+	collection[a] = c
 }

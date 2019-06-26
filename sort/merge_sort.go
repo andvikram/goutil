@@ -4,15 +4,15 @@
 
 package sort
 
-// MergeSort sorts an array of integers in O(n * logn) time
-func MergeSort(arr []int) []int {
-	if len(arr) <= 1 {
-		return arr
+// MergeSort sorts an collection of integers in O(n * logn) time
+func MergeSort(collection []int) []int {
+	if len(collection) <= 1 {
+		return collection
 	}
 
-	m := len(arr) / 2
-	l := arr[:m]
-	r := arr[m:]
+	m := len(collection) / 2
+	l := collection[:m]
+	r := collection[m:]
 
 	return merge(MergeSort(l), MergeSort(r))
 }
