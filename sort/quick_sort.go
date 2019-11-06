@@ -41,7 +41,8 @@ func partition(collection []int, lo, hi int) int {
 			return j
 		}
 
-		swap(collection, i, j)
+		// swap
+		collection[i], collection[j] = collection[j], collection[i]
 
 		// contingency for duplicates
 		if collection[i] == pivot {
@@ -51,10 +52,4 @@ func partition(collection []int, lo, hi int) int {
 			j--
 		}
 	}
-}
-
-func swap(collection []int, a, b int) {
-	c := collection[b]
-	collection[b] = collection[a]
-	collection[a] = c
 }

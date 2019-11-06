@@ -4,7 +4,7 @@
 
 package sort
 
-// MergeSort sorts an collection of integers in O(n * logn) time
+// MergeSort sorts a collection of integers in O(n * logn) time
 func MergeSort(collection []int) []int {
 	if len(collection) <= 1 {
 		return collection

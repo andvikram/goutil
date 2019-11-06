@@ -4,7 +4,7 @@
 
 package sort
 
-// CountingSort sorts a collection of integers in O(n + k) time
+// CountingSort sorts a collection of positive integers in O(n + k) time
 func CountingSort(collection []int) []int {
 	n := len(collection)
 	if n <= 1 {

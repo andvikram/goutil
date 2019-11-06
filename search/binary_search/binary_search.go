@@ -1,23 +1,23 @@
-//
-//  This code implements the Binary Search
-//
-
-package search
+// Package binarysearch implements binary search algorithm for searching an element in an array (slice)
+package binarysearch
 
 // BinarySearch can search an element in a sorted and unique collection of integers in O(n) time
 // It returns the index of the element
 func BinarySearch(collection []int, el int) int {
 	n := len(collection)
-	if n == 1 {
-		return 0
+	if n == 0 {
+		return -1
 	}
-	if n < 1 || el < collection[0] || el > collection[n-1] {
+	if n == 1 {
+		if el == collection[0] {
+			return 0
+		}
 		return -1
 	}
 	l := 0
-	r := n
+	r := n - 1
 	m := n / 2
-	return bSearch(collection, el, l, r-1, m)
+	return bSearch(collection, el, l, r, m)
 }
 
 func bSearch(collection []int, el, l, r, m int) int {
@@ -42,12 +42,10 @@ func bSearch(collection []int, el, l, r, m int) int {
 	// if el < collection[m] {
 	// 	r = m - 1
 	// 	m = (l + r) / 2
-	// 	m = bSearch(collection, el, l, r, m)
 	// }
 	// if el > collection[m] {
 	// 	l = m + 1
 	// 	m = (l + r) / 2
-	// 	m = bSearch(collection, el, l, r, m)
 	// }
-	// return m
+	// return bSearch(collection, el, l, r, m)
 }
